@@ -10,26 +10,22 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Bài Tập 5</h1>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <div class="form-group">
-                  <label for="">Nhập ngày tháng năm</label>
-                  <input type="number" name="" id="ngay" class="form-control" placeholder="Nhập ngày" aria-describedby="helpId">
-                  <br>
-                  <input type="number" name="" id="thang" class="form-control" placeholder="Nhập Tháng" aria-describedby="helpId">
-                  <br>
-                  <input type="number" name="" id="nam" class="form-control" placeholder="Nhập Năm" aria-describedby="helpId">
-               
-                </div>
-                <button class="btn btn-primary" onclick="past()">Ngày Hôm Qua</button>
-                <button class="btn btn-primary" onclick="ngayMoi()">Ngày Mai</button>
-
-                <div class="card-footer alert-success" id="result"></div>
+    <h1>Bài Tập 6</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="">Nhập Số</label>
+                <input type="number" name="" id="so" class="form-control" placeholder="Nhập số có 3 chữ số"
+                    aria-describedby="helpId">
             </div>
-            
+            <button class="btn btn-primary" onclick="docSo()">Tính Số ngày</button>
+            <div class="card-footer alert-success" id="result"></div>
         </div>
+
+    </div>
+</div>
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
