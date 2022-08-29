@@ -8,7 +8,32 @@ function past() {
   var namGiam = "";
   var thongBao = "";
   // xử lý
-  if (1 < ngay && ngay <= 31 && thang >= 1 && thang <= 12 && nam > 0) {
+  if (
+    1 < ngay &&
+    ngay <= 31 &&
+    (thang === 1 ||
+      thang === 3 ||
+      thang === 5 ||
+      thang === 7 ||
+      thang === 8 ||
+      thang === 10 ||
+      thang === 12) &&
+    nam > 0
+  ) {
+    ngayGiam = --ngay;
+    thangGiam = thang;
+    namGiam = nam;
+  } else if (
+    ngay > 1 &&
+    ngay <= 30 &&
+    (thang === 4 || thang === 6 || thang === 9 || thang === 11) &&
+    nam > 0 &&
+    thang !== 2
+  ) {
+    ngayGiam = --ngay;
+    thangGiam = thang;
+    namGiam = nam;
+  } else if (thang === 2 && ngay > 1 && ngay <= 28 && nam > 0) {
     ngayGiam = --ngay;
     thangGiam = thang;
     namGiam = nam;
@@ -51,7 +76,7 @@ function past() {
   document.getElementById("result").innerHTML =
     " ngày " + ngayGiam + " tháng " + thangGiam + " năm " + namGiam + thongBao;
 }
-            ////////
+////////
 function ngayMoi() {
   //đầu vào
   var ngay = document.getElementById("ngay").value * 1;
@@ -65,17 +90,21 @@ function ngayMoi() {
   // xử lý
   if (
     1 <= ngay &&
-    ngay < 31 &&
+    ngay <= 30 &&
     thang >= 1 &&
     thang <= 12 &&
     nam > 0 &&
-    ngay !== 28 &&
+    thang !== 2 &&
     thang !== 4 &&
     thang !== 6 &&
     thang !== 9 &&
     thang !== 11 &&
-    nam !== 12
+    nam >0
   ) {
+    ngayTang = ++ngay;
+    thangTang = thang;
+    namTang = nam;
+  }else if((thang === 4 || thang ===6||thang ===9||thang ===11) && ngay >= 1 && ngay <= 29){
     ngayTang = ++ngay;
     thangTang = thang;
     namTang = nam;
@@ -104,11 +133,11 @@ function ngayMoi() {
     ngayTang = 1;
     thangTang = ++thang;
     namTang = nam;
-  }else if (ngay === 31 && thang === 12 && nam >= 0) {
-    ngayTang = 1 ;
+  } else if (ngay === 31 && thang === 12 && nam >= 0) {
+    ngayTang = 1;
     thangTang = 1;
     namTang = ++nam;
-  }else {
+  } else {
     thongBao = " không xác định !!! vui lòng nhập lại";
   }
 
